@@ -18,25 +18,27 @@ hbs.registerPartials(partialsPath)
 
 app.use(express.static(publicDirectoryPath))
 
+const name = 'cam_______'
+
 
 app.get('/', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Cameron'
+        name: name
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About',
-        name: 'Cameron'
+        name: name
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: 'help',
-        name: 'Cameron'
+        title: 'Help',
+        name: name
     })
 })
 
@@ -71,7 +73,7 @@ app.get('/weather', (req, res) => {
 app.get('/help/*', (req,res) => {
     res.render('404',{
         title: 'Error',
-        name: 'Cameron',
+        name: name,
         error: '404 - help not found'
 
     })
@@ -80,7 +82,7 @@ app.get('/help/*', (req,res) => {
 app.get('*', (req,res) => {
     res.render('404',{
         title: 'Error',
-        name: 'Cameron',
+        name: name,
         error: '404 - page not found'
     })
 })
